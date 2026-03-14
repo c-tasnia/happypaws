@@ -36,7 +36,7 @@ export default function DonationPage({ showToast }) {
       .catch(() => {}) // keep demo data
 
     donationsAPI.recent()
-      .then(res => setRecent(res.data.slice(0, 6)))
+      .then(res => setRecent(Array.isArray(res.data) ? res.data.slice(0, 6) : []))
       .catch(() => {})
   }, [])
 
@@ -99,7 +99,7 @@ export default function DonationPage({ showToast }) {
         </div>
         <div className="hidden md:flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
           <span className="text-white/70 text-xs">Secured by</span>
-          <span className="text-cream font-semibold text-xs">SSLCommerz</span>
+          <span className="text-white font-semibold text-xs">SSLCommerz</span>
         </div>
       </header>
 
