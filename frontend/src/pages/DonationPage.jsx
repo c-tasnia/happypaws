@@ -18,7 +18,7 @@ const DEMO_RECENT = [
 ]
 
 export default function DonationPage({ showToast }) {
-  const [pets,        setPets]       = useState(DEMO_PETS)
+  const [pets, setPets] = useState([])
   const [recent,      setRecent]     = useState(DEMO_RECENT)
   const [selectedPet, setSelected]   = useState(null)
   const [activeAmt,   setActiveAmt]  = useState(null)
