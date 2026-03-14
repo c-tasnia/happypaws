@@ -30,7 +30,8 @@ export default function DonationPage({ showToast }) {
     donationsAPI.getPets()
       .then(res => {
         const general = { id: 'general', name: 'General Fund', species: 'All Animals', emoji: '🐾', description: 'Support all animals in our shelter equally.' }
-        setPets([general, ...res.data])
+        const petsData = Array.isArray(res.data) ? res.data : []
+        setPets([general, ...petsData])
       })
       .catch(() => {}) // keep demo data
 
